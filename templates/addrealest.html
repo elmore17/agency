@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление недвижимости</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/util.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+
+            <form class="login100-form validate-form" action="/addestate" method="POST" enctype="multipart/form-data">
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="text" name="real_est">
+                    <span class="focus-input100" data-placeholder="Тип недвижимости"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="integer" name="count_room">
+                    <span class="focus-input100" data-placeholder="Количество комнат"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="text" name="location">
+                    <span class="focus-input100" data-placeholder="Город"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="integer" name="est">
+                    <span class="focus-input100" data-placeholder="Оценка"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <select class="input100" id="selectvalue" name="agency">
+                        {% for rv in agency%}
+                        <option>{{rv[1]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="integet" name="sale">
+                    <span class="focus-input100" data-placeholder="Цена недвижимости"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="text" name="descry">
+                    <span class="focus-input100" data-placeholder="Краткое описание"></span>
+                </div>
+                <div class="input__wrapper">
+                    <input name="file" type="file" id="input__file" class="input input__file" multiple
+                           accept=".jpg,.jpeg,.png">
+                    <label for="input__file" class="input__file-button">
+                        <span class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" type="submit">
+                            Опубликовать
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
